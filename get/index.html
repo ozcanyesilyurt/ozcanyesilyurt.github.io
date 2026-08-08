@@ -4,16 +4,16 @@
 <title>Hexkeep: Match-3 RPG</title>
 <style>
 *{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:#0d0812;color:#efe7d8;font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
+body{margin:0;background:#0e0e10;color:#f2f2f2;font:15px/1.5 -apple-system,"Segoe UI",Roboto,sans-serif;
 display:flex;align-items:center;justify-content:center}
 .wrap{position:relative;width:min(430px,100vw);height:min(860px,100vh);overflow:hidden;
-border-radius:0;background:#0d0812}
+border-radius:0;background:#0e0e10}
 @media(min-width:480px){.wrap{border-radius:22px;box-shadow:0 30px 80px #000c}}
 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center}
-.veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#0d0812ee 78%,#0d0812 100%)}
+.veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,#0e0e10ee 78%,#0e0e10 100%)}
 .panel{position:absolute;left:0;right:0;bottom:0;padding:22px 26px 26px;display:flex;flex-direction:column;
 align-items:center;gap:14px;text-align:center}
-.tag{color:#e8dfc9;font-size:15.5px;text-shadow:0 1px 6px #000c;margin:0}
+.tag{color:#f2f2f2;font-size:15.5px;text-shadow:0 1px 6px #000c;margin:0}
 .badges{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:center}
 .badges a{display:block;transition:transform .15s}
 .badges a:hover{transform:scale(1.05)}
@@ -21,15 +21,15 @@ align-items:center;gap:14px;text-align:center}
 .qr{display:none;align-items:center;gap:10px;background:#ffffff10;border:1px solid #ffffff22;
 border-radius:12px;padding:8px 14px}
 .qr img{width:74px;height:74px;border-radius:6px;background:#fff;padding:4px}
-.qr span{font-size:12.5px;color:#b3a68f;max-width:120px;text-align:left}
+.qr span{font-size:12.5px;color:#a9a9ad;max-width:120px;text-align:left}
 @media(hover:hover) and (pointer:fine){.qr{display:flex}}
-.foot{font-size:11px;color:#6f6353}
+.foot{font-size:11px;color:#5f5f63}
 </style></head><body>
 <div class="wrap">
 <img class="bg" src="bg.jpg" alt="Hexkeep key art">
 <div class="veil"></div>
 <div class="panel">
-  <p class="tag" id="tag">Match tiles. Fight monsters. Climb the keep — free.</p>
+  <p class="tag" id="tag">Match tiles. Fight monsters. Climb the keep. Free.</p>
   <div class="badges">
     <a id="gpA" href="#"><img id="gpI" src="gp_en.png" alt="Get it on Google Play"></a>
     <a id="asA" href="#"><img src="as.svg" alt="Download on the App Store"></a>
@@ -40,17 +40,17 @@ border-radius:12px;padding:8px 14px}
 </div>
 <script>
 var S={
- tr:["Taşları eşleştir, canavarlarla savaş, kuleye tırman — ücretsiz.","Telefonunla tarat, hemen indir"],
- en:["Match tiles. Fight monsters. Climb the keep — free.","Scan with your phone to download"],
- de:["Kombiniere Steine, kämpfe, erklimme den Turm — gratis.","Mit dem Handy scannen und laden"],
- es:["Combina fichas, lucha, sube la torre — gratis.","Escanéalo con tu móvil para descargar"],
- fr:["Associe, combats, gravis la tour — gratuit.","Scannez avec votre téléphone"],
- it:["Abbina, combatti, scala la torre — gratis.","Scansiona col telefono per scaricare"],
- pt:["Combine, lute, suba a torre — grátis.","Escaneie com o celular para baixar"],
- sv:["Matcha, kämpa, bestig tornet — gratis.","Skanna med mobilen för att ladda ner"],
- pl:["Łącz, walcz, wspinaj się na wieżę — za darmo.","Zeskanuj telefonem, aby pobrać"],
- id:["Cocokkan, bertarung, daki menara — gratis.","Pindai dengan ponselmu untuk mengunduh"],
- nl:["Match, vecht, beklim de toren — gratis.","Scan met je telefoon om te downloaden"]};
+ tr:["Taşları eşleştir, canavarlarla savaş, kuleye tırman. Ücretsiz.","Telefonunla tarat, hemen indir"],
+ en:["Match tiles. Fight monsters. Climb the keep. Free.","Scan with your phone to download"],
+ de:["Kombiniere Steine, kämpfe, erklimme den Turm. Gratis.","Mit dem Handy scannen und laden"],
+ es:["Combina fichas, lucha, sube la torre. Gratis.","Escanéalo con tu móvil para descargar"],
+ fr:["Associe, combats, gravis la tour. Gratuit.","Scannez avec votre téléphone"],
+ it:["Abbina, combatti, scala la torre. Gratis.","Scansiona col telefono per scaricare"],
+ pt:["Combine, lute, suba a torre. Grátis.","Escaneie com o celular para baixar"],
+ sv:["Matcha, kämpa, bestig tornet. Gratis.","Skanna med mobilen för att ladda ner"],
+ pl:["Łącz, walcz, wspinaj się na wieżę. Za darmo.","Zeskanuj telefonem, aby pobrać"],
+ id:["Cocokkan, bertarung, daki menara. Gratis.","Pindai dengan ponselmu untuk mengunduh"],
+ nl:["Match, vecht, beklim de toren. Gratis.","Scan met je telefoon om te downloaden"]};
 var lang=(navigator.language||"en").slice(0,2).toLowerCase(); if(!S[lang])lang="en";
 document.documentElement.lang=lang;
 document.getElementById("tag").textContent=S[lang][0];
