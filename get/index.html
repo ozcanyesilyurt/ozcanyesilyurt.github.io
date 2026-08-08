@@ -56,7 +56,11 @@ document.documentElement.lang=lang;
 document.getElementById("tag").textContent=S[lang][0];
 document.getElementById("scan").textContent=S[lang][1];
 if(lang==="tr")document.getElementById("gpI").src="gp_tr.png";
-var s=(new URLSearchParams(location.search).get("s")||"link").toLowerCase().replace(/[^a-z0-9_-]/g,"")||"link";
+var q=new URLSearchParams(location.search).get("s");
+var s=(q||"").toLowerCase().replace(/[^a-z0-9_-]/g,"");
+if(!s){var rf=(document.referrer||"").toLowerCase(),M={instagram:"instagram",tiktok:"tiktok","t.co":"x","twitter":"x","x.com":"x",reddit:"reddit",youtu:"youtube",facebook:"facebook",whatsapp:"whatsapp","wa.me":"whatsapp","t.me":"telegram"};
+for(var k in M){if(rf.indexOf(k)>-1){s=M[k];break;}}}
+if(!s)s="link";
 var ref=encodeURIComponent("utm_source="+s+"&utm_medium=social&utm_campaign=get");
 var play="https://play.google.com/store/apps/details?id=com.ozcanyesilyurt.hexkeep&referrer="+ref;
 var ios="https://apps.apple.com/app/id6790545193";
