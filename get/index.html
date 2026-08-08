@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hexkeep: Match-3 RPG</title>
+<style>
+body{margin:0;background:#191221;color:#efe7d8;font:16px/1.5 system-ui,sans-serif;
+display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:18px;text-align:center;padding:24px}
+h1{font-size:26px;color:#d9a441;margin:0;letter-spacing:.04em}
+p{color:#b3a68f;margin:0}
+a.btn{display:block;width:260px;padding:14px 0;border-radius:10px;text-decoration:none;font-weight:700}
+.play{background:#4f9e6e;color:#fff}.ios{background:#efe7d8;color:#1a1320}
+</style></head><body>
+<h1>HEXKEEP</h1><p>Match-3 RPG — ücretsiz / free</p>
+<a class="btn play" id="a">Google Play</a>
+<a class="btn ios" id="i">App Store</a>
+<script>
+var s=(new URLSearchParams(location.search).get("s")||"link").toLowerCase().replace(/[^a-z0-9_-]/g,"")||"link";
+var ref=encodeURIComponent("utm_source="+s+"&utm_medium=social&utm_campaign=get");
+var play="https://play.google.com/store/apps/details?id=com.ozcanyesilyurt.hexkeep&referrer="+ref;
+var ios="https://apps.apple.com/app/id6790545193";
+document.getElementById("a").href=play;document.getElementById("i").href=ios;
+var ua=navigator.userAgent;
+if(/android/i.test(ua)){location.replace(play);}
+else if(/iphone|ipad|ipod/i.test(ua)){location.replace(ios);}
+</script></body></html>
